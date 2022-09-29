@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="flex justify-center">
         <Card v-bind="Maisons[id]"></Card>
     </div>
 </template>

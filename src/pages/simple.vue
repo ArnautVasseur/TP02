@@ -18,12 +18,7 @@ const unObjet = {
 </script>
 
 <template>
-<<<<<<< HEAD
-    <div>
-=======
-    <div class="flex items-center flex-col">
-        <p>Simple</p>
->>>>>>> 50f55225777ecc9888d9a852eacf00bd1f7d5b4a
+    <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(420px,420px))] justify-around mb-5">
         <Card></Card>
         <Card v-bind="unObjet"></Card>
     </div>
