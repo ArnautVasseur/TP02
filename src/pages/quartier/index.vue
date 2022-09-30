@@ -19,7 +19,7 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
                 <RouterLink :to="{
                   name: 'quartier-id',
                   params: { id: quartierObject.libelle_Quartier },
-                }">{{ quartierObject.libelle_Quartier }}</RouterLink>
+                }">{{quartierObject.libelle_Commune}} - {{ quartierObject.libelle_Quartier }}</RouterLink>
             </li>
         </ul>
         <Disclosure v-for="(listeQuartier, libelle_Commune) in groupBy(
@@ -27,7 +27,7 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
         'libelle_Commune'
         )" :key="libelle_Commune">
             <DisclosureButton label="libelle_Commune">
-                Button
+              {{libelle_Commune}}
             </DisclosureButton>
             <DisclosurePanel>
                 <ul>
@@ -39,7 +39,7 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
     </section>
 </template>
 
-<script>
+<script lang="ts">
 
 async function supprimerQuartier() {
   const { data, error } = await supabase
