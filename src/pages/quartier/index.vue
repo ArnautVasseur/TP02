@@ -6,8 +6,9 @@ import {
 } from '@headlessui/vue'
 import groupBy from "lodash/groupBy";
 import { supabase } from "../../supabase";
-const { data, error } = await supabase.from("maisoninfo").select("*");
+const { data, error } = await supabase.from("allquartier").select("*");
 if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
+
 </script>
     
 <template>
@@ -37,3 +38,23 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 
     </section>
 </template>
+
+<script>
+
+async function supprimerQuartier() {
+  const { data, error } = await supabase
+    .from("Quartier")
+    .delete()
+    .match({ code_Quartier: quartierObject.value.code_Quartier });
+  if (error) {
+    console.error(
+      "Erreur à la suppression de ",
+      quartierObject.value,
+      "erreur :",
+      error
+    );
+  } else {
+    router.push("/quartier");
+  }
+}
+</script>

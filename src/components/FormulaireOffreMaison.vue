@@ -4,9 +4,12 @@ import { ref } from "@vue/reactivity";
 import card from "@/components/card.vue";
 import { label } from "@formkit/inputs";
 import { useRouter } from "vue-router";
+import groupBy from "lodash/groupBy";
 
 const router = useRouter();
 const maison = ref({});
+const { data:Quartier, error } = await supabase.from("allquartier").select("*");
+if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 
 const props = defineProps(["id"]);
 if (props.id) {
@@ -60,7 +63,13 @@ async function upsertMaison(dataForm, node) {
                     <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number" />
                     <FormKit name="surface" label="Superficie en m²" type="number" />
                     <FormKit name="prix" label="Prix" type="number" />
-                    <FormKit name="fav" label="Ajouter l'offre aux favoris" type="checkbox" wrapper-class="flex"/>
+                    <FormKit name="fav" label="Ajouter l'offre aux favoris" type="checkbox" wrapper-class="flex" />
+                    <FormKit name="code_Quartier" label="Quartier" type="select">
+                        <option value="">Choisir un quartier...</option>
+                        <optgroup v-for="(listeQuartier, libelle_Commune) in groupBy(Quartier,'libelle_Commune')" :key="libelle_Commune" v-bind:label="libelle_Commune">
+                            <option v-for="Quartier in listeQuartier" :key="Quartier.id" v-bind:value="Quartier.code_Quartier">{{Quartier.libelle_Quartier}}</option>
+                        </optgroup>
+                    </FormKit>
                 </FormKit>
             </div>
         </div>
