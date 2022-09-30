@@ -6,7 +6,7 @@
     
     
 <template>
-    <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(420px,420px))] justify-around mb-5">
+    <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(420px,420px))] justify-around mb-5 mr-56">
        <Card v-for="maison in Maisons" :key="maison" v-bind="maison"></Card>
     </div>
 </template>

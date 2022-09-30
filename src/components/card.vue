@@ -7,7 +7,7 @@
     defineProps({
       nom : {type: String, default:'Default'},
       prix: {type:Number, default:2800 },
-      adresse: {type: String, default: ''},
+      adresse: {type: String, default: 'adresse_default'},
       nbrChambre: {type:Number , default: 3 },
       nbrSDB: {type:Number , default: 2 },
       surface: {type:Number, default: 80},
@@ -19,31 +19,28 @@
 
 <template>
   <div>
-     <figure class="flex flex-col mt-12 mx-8 w-96">
+     <figure class="flex flex-col mt-12 mx-8 w-96 border-white rounded-b-lg border">
     <img
       :src=image
       alt="house"
-      class="rounded-t-lg w-full h-48 object-cover"
+      class="w-full h-48 object-cover"
     />
     <figcaption
-      class="
-        flex
+      class=
+        "flex
         w-full
         flex-col
         gap-4
-        rounded-b
-        border border-indigo-50
         py-7
-        px-5
-      "
+        px-5"
     >
       <div class="flex justify-between">
         <div class="w-2/5">
           <div class="flex items-center">
             <p class="text-2xl font-bold text-indigo-500"></p>
-            <span class="text-xs font-normal text-gray-900">{{prix}} /month</span>
+            <span class="text-xs font-normal text-gray-200">{{prix}} /month</span>
           </div>
-          <p class="text-2xl font-bold">{{nom}}</p>
+          <p class="text-2xl font-bold text-white">{{nom}}</p>
         </div>
         <div
           class="
@@ -59,7 +56,7 @@
           <HeartIcon class="h-6 stroke-indigo-500 text-transparent" :class="{'fill-indigo-500' :fav}"></HeartIcon>
         </div>
       </div>
-      <p class="text-base font-normal text-gray-900">
+      <p class="text-base font-normal text-white">
         {{adresse}}
       </p>
       <div class="w-full border border-indigo-50"></div>
