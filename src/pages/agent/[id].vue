@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FormulaireCommune from "../../components/FormulaireCommune.vue";
+import FormulaireAgent from "../../components/FormulaireAgent.vue";
 defineProps<{
     id: string;
 }>();
@@ -7,6 +7,6 @@ defineProps<{
 
 <template>
     <div class="p-2">
-        <FormulaireCommune :id="id" />
+        <FormulaireAgent :id="id" />
     </div>
 </template>

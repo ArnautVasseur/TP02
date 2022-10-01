@@ -7,10 +7,10 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const quartier = ref({});
-const { data: dataQuartierCommune, error } = await supabase
-  .from("quartiercommune")
+const { data: dataQuartier, error } = await supabase
+  .from("allquartier")
   .select("*");
-if (error) console.log("n'a pas pu charger la vue quartiercommune :", error);
+if (error) console.log("n'a pas pu charger la vue allquartier :", error);
 
 const props = defineProps(["id"]);
 if (props.id) {
@@ -18,8 +18,8 @@ if (props.id) {
     let { data, error } = await supabase
         .from("allquartier")
         .select("*")
-        .eq("libelle_quartier", props.id);
-    if (error) console.log("n'a pas pu charger le table Maison :", error);
+        .eq("libelle_Quartier", props.id);
+    if (error) console.log("n'a pas pu charger le table Quartier :", error);
     else quartier.value = (data as any[])[0];
 }
 
@@ -40,7 +40,7 @@ async function upsertQuartier(dataForm, node) {
     label: 'text-white font-medium',
     },
     }" :submit-attrs="{ classes: 
-                   { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded ',
+                   { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded hover:text-white hover:border-[#3eb1ce]',
                      label:''
                 } }">
         <FormKit name="libelle_Quartier" label="libelle_Quartier" />

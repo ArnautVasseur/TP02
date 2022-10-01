@@ -12,7 +12,7 @@ const { data:Quartier, error } = await supabase.from("allquartier").select("*");
 if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 
 const { data:Agent, error: error2 } = await supabase.from("agents").select("*");
-if (error) console.log("n'a pas pu charger la table Agent :", error);
+if (error2) console.log("n'a pas pu charger la table Agent :", error);
 
 const props = defineProps(["id"]);
 if (props.id) {
@@ -57,7 +57,7 @@ async function upsertMaison(dataForm, node) {
                 label: 'text-white font-medium',
                 },
                 }" :submit-attrs="{ classes: 
-                   { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded ',
+                   { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded hover:text-white hover:border-[#3eb1ce]',
                      label:''
                 } }">
                     <FormKit name="nom" label="Nom" />
