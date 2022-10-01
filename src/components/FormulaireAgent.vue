@@ -41,7 +41,7 @@ async function upsertAgent(dataForm, node) {
     label: 'text-white font-medium',
     },
     }" :submit-attrs="{ classes: 
-       { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded hover:text-white hover:border-[#3eb1ce]',
+       { input: 'border-2 bg-[#222] text-[#55BC9F] border border-white p-3 rounded hover:text-white hover:border-[#55BC9F]',
          label:''
     } }">
         <FormKit name="first_name" label="first_name" />

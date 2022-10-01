@@ -4,35 +4,35 @@
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-house dark:text-white"></i></span>
-            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Home</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Home</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-t-full"></span>
           </a>
         </li>
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-user dark:text-white"></i></span>
-            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Profil</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Profil</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
           </a>
         </li>
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-message dark:text-white"></i></span>
-            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Messages</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Messages</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
           </a>
         </li>
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-circle-info dark:text-white"></i></span>
-            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Help</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Help</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
           </a>
         </li>
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-gear dark:text-white"></i></span>
-            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Settings</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Settings</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-b-full"></span>
           </a>
         </li>

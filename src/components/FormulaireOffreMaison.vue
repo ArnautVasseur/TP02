@@ -49,15 +49,15 @@ async function upsertMaison(dataForm, node) {
             <card v-bind="maison" />
         </div>
 
-        <div class="p-2 border-2 mt-20 bg-[#222] rounded-2xl w-72 justify-center flex m-auto mr-80 lg:mr-16">
+        <div class="p-2 border-2 border-black mt-20 dark:bg-[#222] rounded-2xl w-72 justify-center flex m-auto mr-80 lg:mr-16">
             <div class="p-4 ">
                 <FormKit @submit="upsertMaison" type="form" v-model="maison" :config="{
                 classes: {
                 input: 'p-1 bg-[#222] text-white rounded border-gray-300 mb-3 shadow-sm border',
-                label: 'text-white font-medium',
+                label: 'dark:text-white font-medium',
                 },
                 }" :submit-attrs="{ classes: 
-                   { input: 'border-2 bg-[#222] text-[#3eb1ce] border border-white p-3 rounded hover:text-white hover:border-[#3eb1ce]',
+                   { input: 'border-2 bg-[#222] text-[#55BC9F] border border-white p-3 rounded hover:text-white hover:border-[#55BC9F]',
                      label:''
                 } }">
                     <FormKit name="nom" label="Nom" />
