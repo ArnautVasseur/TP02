@@ -6,10 +6,10 @@ import menu_0 from "./components/menu.vue"
   <div :class="isDark ? 'dark' : ''">
 
     <body class="dark:bg-[#222]">
-      <button class="button1 rounded-xl absolute top-[30px] right-[30px] bg-white dark:bg-[#222] p-5 w-[70px] border-2 border-white hover:border-black dark:border-transparent dark:hover:border-white" @click="menu = !menu">
+      <button class="button1 rounded-xl fixed top-[30px] right-[30px] bg-white dark:bg-[#222] p-5 w-[70px] border-2 border-white hover:border-black dark:border-transparent dark:hover:border-white" @click="menu = !menu">
         <span class="icon"><i class="fa-solid fa-bars fa-2xl dark:text-white"></i></span>
       </button>
-      <div class="absolute gap-3 flex top-[30px] left-[30px] items-center">
+      <div class="absolute mb-16 gap-3 flex top-[30px] left-[30px] items-center">
         <p class="relative text-lg dark:text-white">Dark Mode</p>
         <label class="switch relative dark:border-transparent dark:hover:border-white border-2 rounded-full ">
           <input type="checkbox" checked @click="isDark=!isDark">
@@ -17,7 +17,7 @@ import menu_0 from "./components/menu.vue"
         </label>
       </div>
       <Transition>
-        <menu_0 id="menu" class="mt-56" v-if="menu"></menu_0>
+        <menu_0 id="menu" class="mt-52" v-if="menu"></menu_0>
       </Transition>
 
       <Suspense>
@@ -35,7 +35,7 @@ import menu_0 from "./components/menu.vue"
   .switch {
     width: 60px;
     height: 34px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
   }
   
   .switch input { 
@@ -92,29 +92,8 @@ import menu_0 from "./components/menu.vue"
   }
   
   .button1{
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
     transition-duration: 300ms;
-  }
-  
-  @media (max-width: 480px) {
-      .button1{
-        opacity: 0;
-        visibility: hidden;
-      }
-  }
-  
-  @media (min-width: 480px) {
-      .button2{
-        opacity: 0;
-        visibility: hidden;
-      }
-  }
-  
-  @media (min-width: 480px) {
-      .button3{
-        opacity: 0;
-        visibility: hidden;
-      }
   }
   
   .button3{
@@ -131,14 +110,6 @@ import menu_0 from "./components/menu.vue"
   .v-leave-to {
     opacity: 0;
     translate: 150px;
-  }
-  
-  @media (max-width:480px) {
-    .v-enter-from,
-    .v-leave-to {
-    opacity: 0;
-    translate: 0px 150px;
-  }
   }
   </style>
 

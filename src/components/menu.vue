@@ -48,21 +48,7 @@
     height: 350px;
     background-color: white;
     border-radius: 35px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 480px) {
-    .nav{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: 70px;
-        flex-direction: row;
-        width: 100%;
-        border-radius: 0;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
+    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
 }
 
 .nav ul{
@@ -73,14 +59,6 @@
     display: flex;
     flex-direction: column;
     
-}
-
-@media (max-width: 480px) {
-    .nav ul{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
 }
 
 .nav ul li{
@@ -126,35 +104,14 @@
     visibility: hidden;
 }
 
-@media (max-width: 480px) {
-    .nav ul{
-      display: flex;
-      flex-direction: row;
-    }
-}
-
 .nav ul li a .box:hover{
   transition-duration: 500ms;
   border-width: 2px;
-}
-
-@media (max-width: 480px) {
-    .nav ul li a .box{
-      border-radius: 100%;
-      transition-duration: 0ms;
-    }
 }
 
 .nav ul li:hover a .title{
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(-25px);
-}
-
-@media (max-width: 480px) {
-    .nav ul li:hover a .title{
-      opacity: 0;
-      visibility: hidden;
-    }
 }
 </style>

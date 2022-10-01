@@ -14,7 +14,7 @@ async function signIn(data, node) {
 const nvlUtilisateur = ref(false);
 </script>
 <template>
-  <div class="flex justify-center mr-56 relative">
+  <div class="flex justify-center mr-40 relative">
     <button v-if="user" @pointerdown="supabase.auth.signOut()">
       Se déconnecter ({{ user.email }})
     </button>

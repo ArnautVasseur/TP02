@@ -6,7 +6,7 @@ import FormulaireOffreMaison from "../../components/FormulaireOffreMaison.vue";
 
 <template>
     <div>
-        <FormulaireOffreMaison></FormulaireOffreMaison>
+        <FormulaireOffreMaison/>
     </div>
  
 </template>
