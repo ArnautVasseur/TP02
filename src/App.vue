@@ -4,20 +4,143 @@ import menu_0 from "./components/menu.vue"
 
 <template>
   <div :class="isDark ? 'dark' : ''">
-    <div class="fixed top-5 h-5 w-20 right-5 z-10 text-[#3eb1ce]" @click="menu = !menu">
-      <div class="relative hover:text-white hover:border-[#3eb1ce] transition-all top-0 left-0 w-20 h-14 flex justify-center items-center bg-[#222] border-white border-2 cursor-pointer before:content-['Menu']"><span></span></div>
-    </div>
-    <menu_0 v-if="menu" />
 
-    <Suspense>
-      <template #fallback>
-        Loading...
-      </template>
-      <router-view />
-    </Suspense>
+    <body class="dark:bg-[#222]">
+      <button class="button1 rounded-xl absolute top-[30px] right-[30px] bg-white dark:bg-[#222] p-5 w-[70px] border-2 border-white hover:border-black dark:border-transparent dark:hover:border-white" @click="menu = !menu">
+        <span class="icon"><i class="fa-solid fa-bars fa-2xl dark:text-white"></i></span>
+      </button>
+      <div class="absolute gap-3 flex top-[30px] left-[30px] items-center">
+        <p class="relative text-lg dark:text-white">Dark Mode</p>
+        <label class="switch relative dark:border-transparent dark:hover:border-white border-2 rounded-full ">
+          <input type="checkbox" checked @click="isDark=!isDark">
+          <span class="slider round bg-white before:bg-[#222] dark:before:bg-white"></span>
+        </label>
+      </div>
+      <Transition>
+        <menu_0 id="menu" class="mt-56" v-if="menu"></menu_0>
+      </Transition>
 
+      <Suspense>
+        <template #fallback>
+          Loading...
+        </template>
+        <router-view />
+      </Suspense>
+    </body>
   </div>
 </template>
+
+<style>
+
+  .switch {
+    width: 60px;
+    height: 34px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #222;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #222;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .button1{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transition-duration: 300ms;
+  }
+  
+  @media (max-width: 480px) {
+      .button1{
+        opacity: 0;
+        visibility: hidden;
+      }
+  }
+  
+  @media (min-width: 480px) {
+      .button2{
+        opacity: 0;
+        visibility: hidden;
+      }
+  }
+  
+  @media (min-width: 480px) {
+      .button3{
+        opacity: 0;
+        visibility: hidden;
+      }
+  }
+  
+  .button3{
+    transition-delay: 300ms;
+    opacity: 1;
+  }
+  
+  .v-enter-active,
+  .v-leave-active {
+    transition: 0.6s ease-out;
+  }
+  
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+    translate: 150px;
+  }
+  
+  @media (max-width:480px) {
+    .v-enter-from,
+    .v-leave-to {
+    opacity: 0;
+    translate: 0px 150px;
+  }
+  }
+  </style>
 
 <script>
 export default {

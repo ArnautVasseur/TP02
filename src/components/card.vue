@@ -19,58 +19,36 @@
 
 <template>
   <div>
-     <figure class="flex flex-col mt-12 mx-8 w-96 border-white rounded-b-lg border">
-    <img
-      :src=image
-      alt="house"
-      class="w-full h-48 object-cover"
-    />
-    <figcaption
-      class=
-        "flex
-        w-full
-        flex-col
-        gap-4
-        py-7
-        px-5"
-    >
+     <figure class="flex flex-col mt-12 mx-8 w-96 dark:border-white rounded-b-lg border-2 border-black">
+    <img :src=image alt="house" class="w-full h-48 object-cover"/>
+    <figcaption class= "flex w-full flex-col gap-4 py-7 px-5">
       <div class="flex justify-between">
         <div class="w-2/5">
           <div class="flex items-center">
             <p class="text-2xl font-bold text-indigo-500"></p>
-            <span class="text-xs font-normal text-gray-200">{{prix}} /month</span>
+            <span class="text-xs font-normal dark:text-gray-200">{{prix}} /month</span>
           </div>
-          <p class="text-2xl font-bold text-white">{{nom}}</p>
+          <p class="text-2xl font-bold dark:text-white">{{nom}}</p>
         </div>
-        <div
-          class="
-            flex
-            h-12
-            w-12
-            items-center
-            justify-center
-            rounded-full
-            border-2 border-indigo-100
-          "
-        >
-          <HeartIcon class="h-6 stroke-indigo-500 text-transparent" :class="{'fill-indigo-500' :fav}"></HeartIcon>
+        <div class=" flex h-12 w-12 items-center justify-center rounded-full border-2 dark:border-indigo-100 border-black">
+          <HeartIcon class="h-6 stroke-purple-500 text-transparent" :class="{'fill-purple-500' :fav}"></HeartIcon>
         </div>
       </div>
-      <p class="text-base font-normal text-white">
+      <p class="text-base font-normal dark:text-white">
         {{adresse}}
       </p>
-      <div class="w-full border border-indigo-50"></div>
+      <div class="w-full border dark:border-indigo-50 border-black"></div>
       <div class="flex justify-between">
         <div class="flex items-center gap-2">
-          <bed class="h-5 stroke-indigo-500"></bed>
+          <bed class="h-5 stroke-blue-500"></bed>
           <span class="text-xs text-gray-500">{{nbrChambre}} Beds</span>
         </div>
         <div class="flex items-center gap-2">
-          <bath class="h-5 stroke-indigo-500"></bath>
+          <bath class="h-5 stroke-blue-500"></bath>
           <span class="text-xs text-gray-500">{{nbrSDB}} Bathrooms</span>
         </div>
         <div class="flex items-center gap-2">
-          <Surface class="h-5 stroke-indigo-500"></Surface>
+          <Surface class="h-5 stroke-blue-500"></Surface>
           <span class="text-xs text-gray-500">{{surface}} m²</span>
         </div>
       </div>

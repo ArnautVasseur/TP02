@@ -1,48 +1,160 @@
 <template>
-    <ul>
-        <div class="text-black flex flex-col gap-6 mt-32 mr-5 fixed right-0">
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/simple">
-                <code class="font-mono">Simple</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/liste">
-                <code class="font-mono">Liste</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/liste-fetch">
-                <code class="font-mono">Liste-Fetch</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/0">
-                <code class="font-mono">Offre 1</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/edit/new">
-                <code class="font-mono">Créer Offre</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/liste-supabase">
-                <code class="font-mono">Liste-Supabase</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/authentification">
-                <code class="font-mono">Authentification</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/edit/id ">
-                <code class="font-mono">Modifier</code>
-            </router-link>
-            <router-link class="link text-[#3eb1ce] hover:border-[#3eb1ce] transition-all w-48 h-10 justify-center items-center flex border-2 border-white bg-[#222] no-underline hover:text-white" to="/quartier/new ">
-                <code class="font-mono">Créer quartier</code>
-            </router-link>
-        </div>
-    </ul>
-    <Suspense>
-      <template #fallback>
-        Loading...
-      </template>
-    </Suspense>
-
+    <div class="nav dark:bg-[#222]">
+      <ul>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-house dark:text-white"></i></span>
+            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Home</span>
+            <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-t-full"></span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-user dark:text-white"></i></span>
+            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Profil</span>
+            <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-message dark:text-white"></i></span>
+            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Messages</span>
+            <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-circle-info dark:text-white"></i></span>
+            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Help</span>
+            <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-gear dark:text-white"></i></span>
+            <span class="title border-purple-600 border-2 dark:text-white dark:bg-[#222]">Settings</span>
+            <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-b-full"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
 </template>
 
 <style>
-
-.link
-{
-    transition-delay: 50ms;
+.nav{
+    position: fixed;
+    right: 30px;
+    width: 70px;
+    height: 350px;
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 480px) {
+    .nav{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 70px;
+        flex-direction: row;
+        width: 100%;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}
+
+.nav ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+@media (max-width: 480px) {
+    .nav ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+}
+
+.nav ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.nav ul li a{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    text-align: center;
+}
+
+.nav ul li a .icon i{
+    font-size: 24px;
+}
+
+.nav ul li a .title{
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width: 480px) {
+    .nav ul{
+      display: flex;
+      flex-direction: row;
+    }
+}
+
+.nav ul li a .box:hover{
+  transition-duration: 500ms;
+  border-width: 2px;
+}
+
+@media (max-width: 480px) {
+    .nav ul li a .box{
+      border-radius: 100%;
+      transition-duration: 0ms;
+    }
+}
+
+.nav ul li:hover a .title{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-25px);
+}
+
+@media (max-width: 480px) {
+    .nav ul li:hover a .title{
+      opacity: 0;
+      visibility: hidden;
+    }
+}
 </style>
