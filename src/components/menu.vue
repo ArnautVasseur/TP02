@@ -2,39 +2,39 @@
     <div class="nav dark:bg-[#222]">
       <ul>
         <li class="list">
-          <a href="#">
+          <RouterLink to="/offres">
             <span class="icon"><i class="fa-solid fa-house dark:text-white"></i></span>
-            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Home</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Listes</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-t-full"></span>
-          </a>
+          </RouterLink>
         </li>
         <li class="list">
-          <a href="#">
+          <RouterLink to="/agent">
             <span class="icon"><i class="fa-solid fa-user dark:text-white"></i></span>
-            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Profil</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Agents</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
-          </a>
+          </RouterLink>
         </li>
         <li class="list">
-          <a href="#">
-            <span class="icon"><i class="fa-solid fa-message dark:text-white"></i></span>
-            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Messages</span>
+          <RouterLink to="/commune">
+            <span class="icon"><i class="fa-solid fa-building dark:text-white"></i></span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Communes</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
-          </a>
+          </RouterLink>
         </li>
         <li class="list">
-          <a href="#">
-            <span class="icon"><i class="fa-solid fa-circle-info dark:text-white"></i></span>
-            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Help</span>
+          <RouterLink to="/quartier">
+            <span class="icon"><i class="fa-solid fa-road dark:text-white"></i></span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Quartiers</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-full"></span>
-          </a>
+          </RouterLink>
         </li>
         <li class="list">
-          <a href="#">
+          <RouterLink to="/modifier">
             <span class="icon"><i class="fa-solid fa-gear dark:text-white"></i></span>
-            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Settings</span>
+            <span class="title border-[#55BC9F] border-2 dark:text-white dark:bg-[#222]">Modifier Offres</span>
             <span class="box w-16 h-16 -mt-1 border-2 border-transparent hover:border-white absolute rounded-b-full"></span>
-          </a>
+          </RouterLink>
         </li>
       </ul>
     </div>

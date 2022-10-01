@@ -13,7 +13,7 @@
     </script>
     
     <template>
-            <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(420px,420px))] justify-around py-8 mr-40">
+            <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(400px,400px))] justify-around py-16 mr-40">
                 <Card></Card>
                 <Card v-bind="unObjet"></Card>
         </div>

@@ -8,5 +8,4 @@ import FormulaireOffreMaison from "../../components/FormulaireOffreMaison.vue";
     <div>
         <FormulaireOffreMaison/>
     </div>
- 
 </template>

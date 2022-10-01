@@ -13,13 +13,13 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 </script>
     
 <template>
-  <section class="flex flex-col ml-32">
+  <section class="flex flex-col ml-32 pt-16">
     <h3 class="text-2xl text-white my-16">Liste des quartiers</h3>
     <Disclosure v-for="(listeQuartier, libelle_Commune) in groupBy(
     data,
     'libelle_Commune'
     )" :key="libelle_Commune">
-      <DisclosureButton class="text-[#3eb1ce] mr-40 mt-5 w-28 border border-white hover:w-40 hover:text-xl"
+      <DisclosureButton class="text-[#55BC9F] mr-40 mt-5 w-28 border border-white hover:text-white hover:border-[#55BC9F]"
         label="libelle_Commune">
         {{libelle_Commune}}
       </DisclosureButton>
