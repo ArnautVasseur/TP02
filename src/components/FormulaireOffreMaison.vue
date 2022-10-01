@@ -11,6 +11,9 @@ const maison = ref({});
 const { data:Quartier, error } = await supabase.from("allquartier").select("*");
 if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 
+const { data:Agent, error: error2 } = await supabase.from("agents").select("*");
+if (error) console.log("n'a pas pu charger la table Agent :", error);
+
 const props = defineProps(["id"]);
 if (props.id) {
     // On charge les données de la maison
@@ -69,6 +72,10 @@ async function upsertMaison(dataForm, node) {
                         <optgroup v-for="(listeQuartier, libelle_Commune) in groupBy(Quartier,'libelle_Commune')" :key="libelle_Commune" v-bind:label="libelle_Commune">
                             <option v-for="Quartier in listeQuartier" :key="Quartier.id" v-bind:value="Quartier.code_Quartier">{{Quartier.libelle_Quartier}}</option>
                         </optgroup>
+                    </FormKit>
+                    <FormKit name="id_agent" label="Agent" type="select">
+                        <option value="">Choisir un agent...</option>
+                        <option v-for="agent in Agent" :key="agent.id" v-bind:value="agent.id">{{agent.first_name}}</option>
                     </FormKit>
                 </FormKit>
             </div>

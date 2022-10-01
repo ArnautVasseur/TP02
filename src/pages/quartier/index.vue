@@ -1,8 +1,9 @@
 <script setup lang="ts">
+  import { ref } from "@vue/reactivity";
 import {
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
 } from '@headlessui/vue'
 import groupBy from "lodash/groupBy";
 import { supabase } from "../../supabase";
@@ -12,49 +13,31 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 </script>
     
 <template>
-    <section class="flex flex-col">
-        <h3 class="text-2xl">Liste des quartiers</h3>
+  <section class="flex flex-col ml-32">
+    <h3 class="text-2xl text-white my-16">Liste des quartiers</h3>
+    <Disclosure v-for="(listeQuartier, libelle_Commune) in groupBy(
+    data,
+    'libelle_Commune'
+    )" :key="libelle_Commune">
+      <DisclosureButton class="text-[#3eb1ce] mr-40 mt-5 w-28 border border-white hover:w-40 hover:text-xl"
+        label="libelle_Commune">
+        {{libelle_Commune}}
+      </DisclosureButton>
+      <DisclosurePanel>
         <ul>
-            <li v-for="quartierObject in (data)">
-                <RouterLink :to="{
-                  name: 'quartier-id',
-                  params: { id: quartierObject.libelle_Quartier },
-                }">{{quartierObject.libelle_Commune}} - {{ quartierObject.libelle_Quartier }}</RouterLink>
-            </li>
+          <li v-for="quartierObject in (data)">
+            <RouterLink class="text-white" :to="{
+              name: 'quartier-id',
+              params: { id: quartierObject.code_Quartier },
+            }">{{ quartierObject.libelle_Quartier }}</RouterLink>
+          </li>
         </ul>
-        <Disclosure v-for="(listeQuartier, libelle_Commune) in groupBy(
-        data,
-        'libelle_Commune'
-        )" :key="libelle_Commune">
-            <DisclosureButton label="libelle_Commune">
-              {{libelle_Commune}}
-            </DisclosureButton>
-            <DisclosurePanel>
-                <ul>
-                    <li v-for="quartierObject in listeQuartier" :key="quartierObject.libelle_Quartier"></li>
-                </ul>
-            </DisclosurePanel>
-        </Disclosure>
+      </DisclosurePanel>
+    </Disclosure>
 
-    </section>
+  </section>
 </template>
 
 <script lang="ts">
 
-async function supprimerQuartier() {
-  const { data, error } = await supabase
-    .from("Quartier")
-    .delete()
-    .match({ code_Quartier: quartierObject.value.code_Quartier });
-  if (error) {
-    console.error(
-      "Erreur à la suppression de ",
-      quartierObject.value,
-      "erreur :",
-      error
-    );
-  } else {
-    router.push("/quartier");
-  }
-}
 </script>
